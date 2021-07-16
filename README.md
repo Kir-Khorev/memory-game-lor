@@ -9,7 +9,7 @@
 ### Installing and running
 
 ```bash
-git clone https://github.com/khorek/memory-game.git
+git clone https://github.com/khorek/memory-game-lor.git
 json-server src/db.json --port 8000
 npm install
 npm run start
