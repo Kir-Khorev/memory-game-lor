@@ -8,7 +8,6 @@ const Error = () => {
             fontSize: '20px',
             background: `url(${error}) no-repeat center`,
             textAlign: 'center',
-            fontSize: '4rem',
             minHeight: '100%',
             width: '100%',
             height: 'auto',
