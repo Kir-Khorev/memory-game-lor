@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/memory-game-lor/static/css/main.664f9c84.chunk.css",
+    "main.js": "/memory-game-lor/static/js/main.94ca784e.chunk.js",
+    "main.js.map": "/memory-game-lor/static/js/main.94ca784e.chunk.js.map",
+    "runtime-main.js": "/memory-game-lor/static/js/runtime-main.a92fb6ce.js",
+    "runtime-main.js.map": "/memory-game-lor/static/js/runtime-main.a92fb6ce.js.map",
+    "static/js/2.88bce66b.chunk.js": "/memory-game-lor/static/js/2.88bce66b.chunk.js",
+    "static/js/2.88bce66b.chunk.js.map": "/memory-game-lor/static/js/2.88bce66b.chunk.js.map",
+    "index.html": "/memory-game-lor/index.html",
+    "static/css/main.664f9c84.chunk.css.map": "/memory-game-lor/static/css/main.664f9c84.chunk.css.map",
+    "static/js/2.88bce66b.chunk.js.LICENSE.txt": "/memory-game-lor/static/js/2.88bce66b.chunk.js.LICENSE.txt",
+    "static/media/error.00660134.jpg": "/memory-game-lor/static/media/error.00660134.jpg",
+    "static/media/header-bg.775bc324.jpg": "/memory-game-lor/static/media/header-bg.775bc324.jpg",
+    "static/media/loading.f4fccc96.gif": "/memory-game-lor/static/media/loading.f4fccc96.gif",
+    "static/media/logo.ae606e29.png": "/memory-game-lor/static/media/logo.ae606e29.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a92fb6ce.js",
+    "static/js/2.88bce66b.chunk.js",
+    "static/css/main.664f9c84.chunk.css",
+    "static/js/main.94ca784e.chunk.js"
+  ]
+}
