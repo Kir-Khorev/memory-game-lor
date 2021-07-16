@@ -1,5 +1,5 @@
 export default class GameService {
-    _apiBase = 'http://localhost:8000/characters';
+    _apiBase = 'https://my-json-server.typicode.com/khorek/db/characters';
 
     async getResource() {
         const res = await fetch(`${this._apiBase}`)

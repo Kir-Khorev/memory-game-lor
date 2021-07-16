@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.css';
+import './style.css';
 import WithGameServiceHOC from '../hoc';
 import { connect } from 'react-redux';
 import { cardsRequested, cardsLoaded } from '../../reducers';
