@@ -17,7 +17,6 @@ class CardList extends Component {
 
     render() {
         const { cardItems, loading } = this.props
-        console.log(this.props);
         if (loading) {
             console.log('loading');
             return <Spinner />
