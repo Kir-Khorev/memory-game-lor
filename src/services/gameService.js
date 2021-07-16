@@ -17,7 +17,6 @@ export default class GameService {
     async getItem(id) {
         const res = await this.getResource();
         const item = res.find((el) => {
-            console.log(`el.id: ${el.id}, id: ${id}`);
             return el.id === +id;
         })
         return item

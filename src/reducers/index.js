@@ -28,17 +28,15 @@ const reducers = (state = initialState, action) => {
 
         case 'ITEM_ADD_TO_MEMORY':
             const id = action.payload;
-            // Найти элемент у которого id == пришедшему id:
+            // Find element with id == come id:
             const newItemId = state.cards.find(item => item.id === id);
             console.log(newItemId.id);
             const nonUniq = state.uniqIdLine.includes(newItemId);
 
-            // Если id элемент ЕСТЬ в uniqIdLine
+            // If id element there is IN uniqIdLine
             if (nonUniq) {
                 // GameOver
-                console.log('Game Over', newItemId);
                 alert(`GameOver: ${newItemId.text} was alredy`)
-
                 return {
                     ...state,
                     uniqIdLine: [],
@@ -46,10 +44,8 @@ const reducers = (state = initialState, action) => {
                 }
 
             }
-            // Если id элемента НЕТ в uniqIdLine
+            // If id element no IN uniqIdLine
             else {
-                console.log('Game continue');
-                console.log('Current Score:', state.currentScore);
                 return {
                     ...state,
                     uniqIdLine: [

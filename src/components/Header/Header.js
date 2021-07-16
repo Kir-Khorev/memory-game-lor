@@ -14,7 +14,7 @@ const Header = ({ currentScore, maxScore }) => {
             height: '200px'
         }}>
             <img src={logo} className="App-logo" alt="logo" style={{ width: '50px', height: '50px' }} />
-            <div>Memory Game</div>
+            <div>Memory Game 'Lord of the Rings'</div>
             <div className='app-header__score'>Current Score: {currentScore}</div>
             <div className='app-header__best-score'>Max score: {maxScore}</div>
         </header>

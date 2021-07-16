@@ -11,7 +11,7 @@ class CardList extends Component {
         this.props.cardsRequested()
         const { GameService } = this.props;
         GameService.getCardsItems()
-            .then(res => this.props.cardsLoaded(res)) // здесь загружаем новые карточки в state
+            .then(res => this.props.cardsLoaded(res))
             .catch(err => console.log(err))
     }
 

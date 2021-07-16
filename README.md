@@ -2,7 +2,7 @@
 
 > ## From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/memory-card)
 
-> - [Live Demo](https://khorek.github.io/) :shipit:
+> - [Live Demo](https://memory-game-lor.vercel.app/) :dizzy:
 
 ## Getting Started
 
@@ -10,7 +10,6 @@
 
 ```bash
 git clone https://github.com/khorek/memory-game-lor.git
-json-server src/db.json --port 8000
 npm install
 npm run start
 ```

@@ -29,6 +29,5 @@ const mapDispatchToProps = {
     cardsRequested,
     cardsLoaded
 }
-export default WithGameServiceHOC()(connect(mapStateToProps, mapDispatchToProps)(CardListItem));
 
-// export default CardListItem;
+export default WithGameServiceHOC()(connect(mapStateToProps, mapDispatchToProps)(CardListItem));
