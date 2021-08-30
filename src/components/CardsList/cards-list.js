@@ -1,64 +1,74 @@
-import React, { Component } from 'react';
+import React, { useEffect, } from 'react';
 import CardListItem from '../CardsListItem';
 import WithGameServiceHOC from '../hoc';
-import { connect } from 'react-redux';
-import { cardsRequested, cardsLoaded, currentScoreChangeAC } from '../../reducers';
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../state';
 import Spinner from '../spinner';
-import style from './style.scss';
+import './style.scss';
 
-class CardList extends Component {
-    componentDidMount() {
-        this.props.cardsRequested()
-        const { GameService } = this.props;
+const CardList = (props) => {
+    const state = useSelector((state) => state.accountReducers);
+    const dispatch = useDispatch();
+
+    const { cardsRequested, cardsLoaded, currentScoreChangeAC } = bindActionCreators(actionCreators, dispatch);
+    // const AC = bindActionCreators(actionCreators, dispatch);
+
+    // const [state, setState] = useState();
+
+    useEffect(() => {
+        console.log('render. UseEffect');
+        cardsRequested();
+        const { GameService } = props;
         GameService.getCardsItems()
-            .then(res => this.props.cardsLoaded(res))
-            .catch(err => console.log(err))
+            .then(res => cardsLoaded(res))
+            .catch(err => console.error(err))
+    }, [state.state])
+
+    const { loading } = state;
+    const cardItems = state.cards;
+
+    if (loading) {
+        return <Spinner />
     }
 
-    render() {
-        const { cardItems, loading } = this.props
-        if (loading) {
-            console.log('loading');
-            return <Spinner />
-        }
+    let items;
 
-        let items;
-
-        if (cardItems) {
-            items = cardItems.sort(() => Math.random() - 0.5).map(el => {
-                return (
-                    <CardListItem
-                        key={el.id} img={el.img} text={el.text}
-                        onClick={() => console.log('Click')}
-                        changeCurrentScoreFunc={() => this.props.currentScoreChangeAC(el.id)} />
-                )
-            })
-        }
-
-        return (
-            <section>
-                <div className='cardList'>
-                    <div>{items}</div>
-                </div >
-            </section >
-        )
+    if (cardItems) {
+        items = cardItems.sort(() => Math.random() - 0.5).map(el => {
+            return (
+                <CardListItem
+                    key={el.id} img={el.img} text={el.text}
+                    changeCurrentScoreFunc={() => currentScoreChangeAC(el.id)} />
+            )
+        })
     }
 
+    return (
+        <section>
+            <div className='cardList'>
+                <div>{items}</div>
+            </div >
+        </section >
+    )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        cardItems: state.cards,
-        loading: state.loading,
-        currentScore: state.currentScore,
-        uniqIdLine: state.uniqIdLine,
-    }
-}
 
-const mapDispatchToProps = {
-    cardsRequested,
-    cardsLoaded,
-    currentScoreChangeAC,
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         cardItems: state.cards,
+//         loading: state.loading,
+//         currentScore: state.currentScore,
+//         uniqIdLine: state.uniqIdLine,
+//     }
+// }
 
-export default WithGameServiceHOC()(connect(mapStateToProps, mapDispatchToProps)(CardList));
+// const mapDispatchToProps = {
+//     cardsRequested,
+//     cardsLoaded,
+//     currentScoreChangeAC,
+// }
+
+// export default WithGameServiceHOC()(connect(mapStateToProps, mapDispatchToProps)(CardList));
+
+export default WithGameServiceHOC()(CardList);

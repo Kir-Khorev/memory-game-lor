@@ -1,8 +1,11 @@
 import React from 'react';
 import './style.css';
 import WithGameServiceHOC from '../hoc';
-import { connect } from 'react-redux';
-import { cardsRequested, cardsLoaded } from '../../reducers';
+// import { connect } from 'react-redux';
+// import { cardsRequested, cardsLoaded } from '../../reducers';
+// import { useDispatch } from 'react-redux';
+// import { bindActionCreators } from 'redux';
+// import { actionCreators } from '../../state';
 
 const CardListItem = (props) => {
     return (
@@ -18,16 +21,17 @@ const CardListItem = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        cardsItems: state.cards,
-        loading: state.loading
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         cardsItems: state.cards,
+//         loading: state.loading
+//     }
+// }
 
-const mapDispatchToProps = {
-    cardsRequested,
-    cardsLoaded
-}
+// const mapDispatchToProps = {
+//     cardsRequested,
+//     cardsLoaded
+// }
 
-export default WithGameServiceHOC()(connect(mapStateToProps, mapDispatchToProps)(CardListItem));
+// export default WithGameServiceHOC()(connect(mapStateToProps, mapDispatchToProps)(CardListItem));
+export default WithGameServiceHOC()(CardListItem);
