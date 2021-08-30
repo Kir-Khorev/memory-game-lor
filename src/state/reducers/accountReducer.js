@@ -1,8 +1,8 @@
 const initialState = {
-    cards: [5, 6],
+    cards: [],
     loading: true,
-    currentScore: 5,
-    maxScore: 25,
+    currentScore: 0,
+    maxScore: 0,
     uniqIdLine: [],
     hasError: false,
     popup: ''
@@ -72,26 +72,5 @@ const accountReducers = (state = initialState, action) => {
     }
 }
 
-// // Action Creators:
-
-// export const cardsLoaded = (newCards) => {
-//     return {
-//         type: 'CARDS_LOADED',
-//         payload: newCards
-//     }
-// }
-
-// export const cardsRequested = () => {
-//     return {
-//         type: 'CARDS_REQUESTED'
-//     }
-// }
-
-// export const currentScoreChangeAC = (id) => {
-//     return {
-//         type: 'ITEM_ADD_TO_MEMORY',
-//         payload: id
-//     }
-// }
 
 export default accountReducers;

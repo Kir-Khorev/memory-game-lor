@@ -10,11 +10,7 @@ import './style.scss';
 const CardList = (props) => {
     const state = useSelector((state) => state.accountReducers);
     const dispatch = useDispatch();
-
     const { cardsRequested, cardsLoaded, currentScoreChangeAC } = bindActionCreators(actionCreators, dispatch);
-    // const AC = bindActionCreators(actionCreators, dispatch);
-
-    // const [state, setState] = useState();
 
     useEffect(() => {
         console.log('render. UseEffect');
@@ -52,23 +48,5 @@ const CardList = (props) => {
         </section >
     )
 }
-
-
-// const mapStateToProps = (state) => {
-//     return {
-//         cardItems: state.cards,
-//         loading: state.loading,
-//         currentScore: state.currentScore,
-//         uniqIdLine: state.uniqIdLine,
-//     }
-// }
-
-// const mapDispatchToProps = {
-//     cardsRequested,
-//     cardsLoaded,
-//     currentScoreChangeAC,
-// }
-
-// export default WithGameServiceHOC()(connect(mapStateToProps, mapDispatchToProps)(CardList));
 
 export default WithGameServiceHOC()(CardList);
