@@ -4,6 +4,8 @@
 
 > - [Live Demo](https://memory-game-lor.vercel.app/) :dizzy:
 
+![screenshot](src/assets/img/screenshot.png "screenshot")
+
 ## Getting Started
 
 ### Installing and running

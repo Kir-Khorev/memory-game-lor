@@ -13,7 +13,6 @@ const CardList = (props) => {
     const { cardsRequested, cardsLoaded, currentScoreChangeAC } = bindActionCreators(actionCreators, dispatch);
 
     useEffect(() => {
-        console.log('render. UseEffect');
         cardsRequested();
         const { GameService } = props;
         GameService.getCardsItems()
