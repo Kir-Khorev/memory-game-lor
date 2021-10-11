@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../state';
 import Spinner from '../spinner';
 import './style.scss';
+import GameOverPopup from '../GameOverPopup/';
 
 const CardList = (props) => {
     const state = useSelector((state) => state.accountReducers);
@@ -20,11 +21,16 @@ const CardList = (props) => {
             .catch(err => console.error(err))
     }, [state.state])
 
-    const { loading } = state;
+    const { loading , endGame } = state;
+
     const cardItems = state.cards;
 
     if (loading) {
         return <Spinner />
+    }
+
+    if (endGame) {
+        return <GameOverPopup />
     }
 
     let items;

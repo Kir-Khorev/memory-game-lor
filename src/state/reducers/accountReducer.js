@@ -5,7 +5,8 @@ const initialState = {
     maxScore: 0,
     uniqIdLine: [],
     hasError: false,
-    popup: ''
+    popup: '',
+    endGame: false
 };
 
 const accountReducers = (state = initialState, action) => {
@@ -24,7 +25,8 @@ const accountReducers = (state = initialState, action) => {
                 loading: true,
                 uniqIdLine: [],
                 currentScore: 0,
-                maxScore: 0
+                maxScore: 0,
+                endGame: false
             }
         case 'ITEM_ADD_TO_MEMORY':
             const id = action.payload;
@@ -40,7 +42,8 @@ const accountReducers = (state = initialState, action) => {
                 return {
                     ...state,
                     uniqIdLine: [],
-                    currentScore: 0
+                    currentScore: 0,
+                    endGame: true
                 }
             }
 
