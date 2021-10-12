@@ -13,3 +13,33 @@ h1 {
     font-weight: 'bold';
     color: aliceblue;
 }
+
+.gameoverCard {
+    text-align: center;
+    border-radius: 20px;
+}
+
+.gameoverImg {
+    opacity: 1;
+}
+
+.rainbow{
+    background-color: #343A40;
+    border-radius: 4px;  
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 26px;
+    
+}
+
+.rainbow-2:hover{
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    animation:slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }
