@@ -4,6 +4,7 @@ const initialState = {
     currentScore: 0,
     maxScore: 0,
     uniqIdLine: [],
+    lastElem: {},
     hasError: false,
     popup: '',
     endGame: false
@@ -41,6 +42,7 @@ const accountReducers = (state = initialState, action) => {
                 alert(`GameOver: ${newItemId.text} was alredy`)
                 return {
                     ...state,
+                    lastElem: newItemId,
                     uniqIdLine: [],
                     currentScore: 0,
                     endGame: true

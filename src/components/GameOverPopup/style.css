@@ -1,0 +1,15 @@
+.wrapper {
+  color: 'white';
+  font-size: '20px';
+  background: url("../../assets/img/gameover.gif") no-repeat center top;
+  background-size: 100%;
+  text-align: center;
+  width: auto;
+  height: 100vh;
+}
+
+h1 {
+  padding: '50px';
+  font-weight: 'bold';
+  color: aliceblue;
+}
