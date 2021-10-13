@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./style.scss";
-import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
 import WithGameServiceHOC from "../hoc";
@@ -8,17 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 const GameOverPopup = (props) => {
     const state = useSelector((state) => state.accountReducers);
-    console.log(state);
     const dispatch = useDispatch();
     const { cardsRequested, cardsLoaded } = bindActionCreators(
         actionCreators,
         dispatch
     );
-    console.log(state.lastElem);
-
-    useEffect(() => {
-        console.log("Render");
-    }, [state.state]);
 
     const startNewGame = () => {
         cardsRequested();

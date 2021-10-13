@@ -9,13 +9,8 @@ import './style.scss';
 import GameOverPopup from '../GameOverPopup/';
 
 const CardList = (props) => {
-    console.log(props);
     const state = useSelector((state) => state.accountReducers);
-
     const arr = state.uniqIdLine;
-    // const lastElem = arr.length ? arr[arr.length - 1] : {};
-    console.log(arr);
-    // console.log(lastElem);
 
     const dispatch = useDispatch();
     const { cardsRequested, cardsLoaded, currentScoreChangeAC } = bindActionCreators(actionCreators, dispatch);
@@ -26,7 +21,7 @@ const CardList = (props) => {
         GameService.getCardsItems()
             .then(res => cardsLoaded(res))
             .catch(err => console.error(err))
-    }, [state.state])
+    }, [state.state]);
 
     const { loading , endGame } = state;
 

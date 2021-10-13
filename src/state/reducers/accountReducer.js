@@ -39,7 +39,6 @@ const accountReducers = (state = initialState, action) => {
       // If id element there is IN uniqIdLine
       if (nonUniq) {
         // GameOver
-        alert(`GameOver: ${newItemId.text} was alredy`);
         return {
           ...state,
           lastElem: newItemId,
